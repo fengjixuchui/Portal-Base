@@ -1,4 +1,4 @@
-//========= Copyright © 1996-2006, Valve Corporation, All rights reserved. ============//
+//========= Copyright Â© 1996-2006, Valve Corporation, All rights reserved. ============//
 //
 // Purpose: 
 //
@@ -7,12 +7,12 @@
 
 
 #include "cbase.h"
-#include "portalsimulation.h"
+#include "PortalSimulation.h"
 #include "vphysics_interface.h"
 #include "physics.h"
 #include "portal_shareddefs.h"
 #include "StaticCollisionPolyhedronCache.h"
-#include "model_types.h."
+#include "model_types.h"
 #include "filesystem.h"
 #include "collisionutils.h"
 #include "tier1/callqueue.h"

@@ -1,6 +1,8 @@
 Portal
 =====
 
+[![Build status](https://ci.appveyor.com/api/projects/status/g0cv8na9uq9tmadt/branch/master?svg=true)](https://ci.appveyor.com/project/SonicEraZoR/portal-base/branch/master)
+
 This is the old Portal 1 source code ported to Source Engine 2013. I made this because I wanted to make proper Half-Life 2 with Portal gun, but I have no idea how to fix all of the bugs that occur in Portal on Half-Life 2 maps (some crashes, displacement collision not working near portals). So I hope someone more experienced with Source engine will help me fix them.
 
 ## Current Differences from original Portal
@@ -13,6 +15,8 @@ This is the old Portal 1 source code ported to Source Engine 2013. I made this b
 * No crashes on the map load in Half-Life 2 and Episodes
 * Even if "sv_regeneration_wait_time" is higher than 1 second, red tint will now be on the screen only for 1 second
 * You won't get stuck in non-solid static props near portals
+* You can change the **maximum** delay between shooting a Portal and it opening with sv_portal_projectile_delay (defalult is 0.5 seconds), if set to a very high number behaviour will be the same as in normal Portal
+* You can rapid click to shoot Portals faster, like in Portal 2
 
 ## Dependencies
 
