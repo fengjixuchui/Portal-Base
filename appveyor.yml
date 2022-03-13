@@ -7,15 +7,15 @@ only_commits:
 
 image:
   - Visual Studio 2013
-  - Ubuntu
+#  - Ubuntu
 
 clone_depth: 1
 
-for:
--
+#for:
+#-
   matrix:
-    only:
-      - image: Visual Studio 2013
+#    only:
+#      - image: Visual Studio 2013
 
   install:
     - |-
@@ -36,35 +36,36 @@ for:
   artifacts:
     - path: hl2-with-ashpd-win.zip
     - path: hl2ep2-with-ashpd-win.zip
--
-  matrix:
-    only:
-      - image: Ubuntu
-
-  init:
-    - |-
-      sudo wget -qO- http://media.steampowered.com/client/runtime/steam-runtime-sdk_latest.tar.xz \
-      | sudo tar --strip-components=1 --one-top-level=/valve/steam-runtime -xvJf -
-      sudo /valve/steam-runtime/setup.sh --target="i386 amd64" --release --auto-upgrade
-      sudo cp /usr/bin/objcopy /valve/steam-runtime/bin
-
-  install:
-    - |-
-      sudo chmod +x ./sp/src/devtools/{bin/vpc,bin/vpc_linux,bin/linux/ccache,gendbg.sh}
-      cd sp/src
-      ./devtools/bin/vpc /hl2 /episodic +game /mksln games
-
-  build_script:
-    - make -j$(nproc) -f games.mak
-
-  after_build:
-    - |-
-      cd $APPVEYOR_BUILD_FOLDER
-      tar -C sp/game/hl2_with_ashpd/bin --exclude=client_srv* -cvzf hl2-with-ashpd-linux.tar.gz .
-      tar -C sp/game/hl2ep2_with_ashpd/bin --exclude=client_srv* -cvzf hl2ep2-with-ashpd-linux.tar.gz .
-
-  test: off
-
-  artifacts:
-    - path: hl2-with-ashpd-linux.tar.gz
-    - path: hl2ep2-with-ashpd-linux.tar.gz
+#-
+#  matrix:
+#    only:
+#      - image: Ubuntu
+#
+#  init:
+#    - |-
+#      sudo wget -qO- http://media.steampowered.com/client/runtime/steam-runtime-sdk_latest.tar.xz \
+#      | sudo tar --strip-components=1 --one-top-level=/valve/steam-runtime -xvJf -
+#      sudo /valve/steam-runtime/setup.sh --target="i386 amd64" --release --auto-upgrade
+#      sudo cp /usr/bin/objcopy /valve/steam-runtime/bin#
+#
+#  install:
+#    - |-
+#      sudo chmod +x ./sp/src/devtools/{bin/vpc,bin/vpc_linux,bin/linux/ccache,gendbg.sh}
+#      cd sp/src
+#      ./devtools/bin/vpc /hl2 /episodic +game /mksln games
+#
+#  build_script:
+#    - make -j$(nproc) -f games.mak
+#
+#  after_build:
+#    - |-
+#      cd $APPVEYOR_BUILD_FOLDER
+#      tar -C sp/game/hl2_with_ashpd/bin --exclude=client_srv* -cvzf hl2-with-ashpd-linux.tar.gz .
+#      tar -C sp/game/hl2ep2_with_ashpd/bin --exclude=client_srv* -cvzf hl2ep2-with-ashpd-linux.tar.gz .
+#
+#  test: off
+#
+#  artifacts:
+#    - path: hl2-with-ashpd-linux.tar.gz
+#    - path: hl2ep2-with-ashpd-linux.tar.gz
+#
