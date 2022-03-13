@@ -13,7 +13,7 @@ clone_depth: 1
 
 #for:
 #-
-  matrix:
+#  matrix:
 #    only:
 #      - image: Visual Studio 2013
 
